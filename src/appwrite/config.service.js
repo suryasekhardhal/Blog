@@ -17,7 +17,7 @@ export class Service {
 
     async createPost({title,slug,content,featuredImage,status,userId}){
         try {
-            return await this.databases.createRow(
+            return await this.databases.createDocument(
                 conf.appWriteDatabaseId,
                 conf.appWriteCollectionId,
                 slug,
@@ -72,7 +72,7 @@ export class Service {
 
     async getPost(slug){
         try {
-            return await this.databases.getRow(
+            return await this.databases.getDocument(
                 conf.appWriteDatabaseId,
                 conf.appWriteCollectionId,
                 slug
@@ -86,7 +86,7 @@ export class Service {
 
     async getPosts(queries = [Query.equal("status","active")]){
         try {
-            return await this.databases.listRows(
+            return await this.databases.listDocuments(
                 conf.appWriteDatabaseId,
                 conf.appWriteCollectionId,
                 queries

@@ -9,7 +9,7 @@ function Select({
     const id = useId()
   return (
     <div className='w-full'>
-        {label && <lable htmlFor={id} className ></lable>}
+        {label && <label htmlFor={id} className='' ></label>}
         <select 
         {...props}
         id={id}
